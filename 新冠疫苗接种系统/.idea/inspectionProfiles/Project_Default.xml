@@ -1,0 +1,16 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="sys.sys" />
+          <option value="app.views.studb" />
+          <option value="errors.urls.not_page_found" />
+          <option value="django.shortcuts.render_to_response" />
+          <option value="apps.web.views.RETCODE" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

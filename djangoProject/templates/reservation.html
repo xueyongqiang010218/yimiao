@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>疫苗接种预约</title>
+{#        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>#}
+{#        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>#}
+		<script src="http://code.jquery.com/jquery-1.2.3.min.js"></script>
+		<link href="favicon.ico" rel="shortcut icon"/>
+        <link href="https://cdn.bootcss.com/twitter-bootstrap/3.4.0/css/bootstrap.min.css" rel="stylesheet">
+		<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+		<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"
+			integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous">
+		</script>
+		<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+		<script src="js/bootstrap/dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+		<!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+		<!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+	</head>
+	<body>
+		<div id="app">
+			<div class="container-fluid" style="margin-top: 60px;">
+				<div class="container-fluid col-md-2">
+					<p class="text-danger">欢迎，使用本系统</p>
+					<ul class="nav nav-pills nav-stacked">
+						<li role="presentation" class="active"><a href="/peopleindex/">疫苗接种预约信息</a></li>
+						<li role="presentation"><a href='/logout/'>退出系统</a></li>
+					</ul>
+				</div>
+				<div class="container-fluid col-md-10">
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+
+								<th>接种医院名称</th>
+								<th>地址</th>
+								<th>电话</th>
+								<th>接种时间</th>
+                                <th>预约时间</th>
+                                <th>接种人</th>
+                                <th>身份证</th>
+                                <th>手机号码</th>
+                                <th>家庭住址</th>
+							</tr>
+						</thead>
+						<tbody>
+                                {% for i in peo_test %}
+                                    <tr>
+                                        <th>{{ i.vacc_id.name }}</th>
+                                        <th>{{ i.vacc_id.address }}</th>
+                                        <th>{{ i.vacc_id.mobile }}</th>
+                                        <th>{{ i.vacc_id.data | date:'Y年 m月 d日' }}</th>
+                                        <th>{{ i.restime | date:'Y年 m月 d日' }}</th>
+                                        <th>{{ i.username }}</th>
+                                        <th>{{ i.id_number }}</th>
+                                        <th>{{ i.mobile}}</th>
+                                        <th>{{ i.address }}</th>
+
+                                    </tr>
+                                {% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>
